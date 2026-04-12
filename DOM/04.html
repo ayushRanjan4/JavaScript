@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush DOM</title>
+</head>
+<body>
+    <ul class="language">
+        <li>javascript</li>
+    </ul>
+</body>
+
+<script>
+    function addLanguage(lanName) {
+        const li=document.createElement('li');
+        li.innerHTML=`${lanName}`;
+        document.querySelector('.language').appendChild(li);
+    }
+    // addLanguage("python")   
+    // addLanguage("java")
+    // addLanguage("c++")  
+
+    function addoptLanguage(langName){
+
+        const li=document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li);
+        
+    }
+    addoptLanguage("python")   
+    addoptLanguage("java")
+    addoptLanguage("c++")
+
+    //editing the element
+    const secondli=document.querySelector("li:nth-child(2)");
+    const newli=document.createElement('li');
+    newli.textContent="ruby"
+    secondli.replaceWith(newli)
+
+    //removing the element
+    const lastLang=document.querySelector("li:last-child");
+    lastLang.remove()
+</script>
+</html>
