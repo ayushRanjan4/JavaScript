@@ -6,30 +6,26 @@
     <title>React</title>
 </head>
 <body>
-
+    <button>Button Clicked</button>
 </body>
 <script>
-    const body=document.querySelector('body');
-    for(let i=1;i<51;i++){
-        const bt=document.createElement('button');
-        bt.innerHTML=`button ${i}`;
-        const chose="0123456789ABCDEF";
-        let color="#"
-        for(let j=0;j<6;j++){
-            color+=chose[parseInt(Math.random()*16)];
+    class React {
+        constructor(){
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this))
+
         }
-        bt.style.backgroundColor=color;
-        bt.style.padding="10px";
-        bt.style.margin="5px";
-
-        body.appendChild(bt);
+        handleClick(){
+            console.log("button clicked");
+            console.log(this.server);
+        }
     }
-    const btn=body.querySelectorAll('button');
-    btn.forEach((button)=>{
-        button.addEventListener('click',function(e){
-            body.style.backgroundColor=e.target.style.backgroundColor;
-        })
-    })
 
+    const app = new React()
 </script>
 </html>
